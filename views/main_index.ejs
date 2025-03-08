@@ -1,0 +1,30 @@
+<div class="author">
+    <h1 class="author_heading">Hi, I am Vishal Rathod</h1>
+    <p class="author_body">This is a blog application to create blogs and inspire people around you by sharing your thoughts.</p>
+</div>
+
+<section class="image_btn-section">
+
+    <div class="btn-section">
+        <a href="/admin/login_page" class="btn">Login</a>
+        <a href="/admin/register_page" class="btn">Register</a>
+    </div>
+
+    <div class="img-section">
+    <img src="./images/blog-post-hero.png" alt="" class="hero-image" width="550px" height="400px">
+</div>
+</section>
+
+<section class="aticles">
+    <h2 class="articles_heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+         <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article-list_date"><%= post.createdAt.toDateString() %></span>
+            </a>
+         </li>
+        <% }) %>
+    </ul>
+</section>
